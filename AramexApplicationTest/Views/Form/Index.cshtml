@@ -1,0 +1,71 @@
+﻿@model AramexApplicationTest.ViewModels.FormViewModel
+
+@{
+    ViewBag.Title = "Form Submission Test Page";
+
+    Html.EnableClientValidation(true);
+}
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+@using (Html.BeginForm("Completed", "Form", FormMethod.Post, new { @id = "registerFormId", @class = "form-horizontal", role = "form" }))
+
+{
+
+    <div class="row">
+        <div class="col-sm-12">
+            <h1>Form Submission &amp; Validation Test</h1>
+        </div>
+        <div class="col-md-6   ">
+            @Html.LabelFor(m => m.FirstName, "First Name", new { @class = "requiredS" })
+            @Html.TextBoxFor(m => m.FirstName, new { @class = "required form-control" })
+            @Html.ValidationMessageFor(m => m.FirstName, "", new { @style = "color:red" })
+        </div>
+
+        <div class="col-md-6 ">
+
+            @Html.LabelFor(m => m.LastName, "Last Name", new { @class = "requiredS" })
+            @Html.TextBoxFor(m => m.LastName, new { @class = "required form-control" })
+            @Html.ValidationMessageFor(m => m.LastName, "", new { @style = "color:red" })
+        </div>
+        <br />
+        <div class="col-md-12 ">
+
+            @Html.LabelFor(m => m.Email, new { @class = "requiredS" })
+            @Html.TextBoxFor(m => m.Email, new { @class = "required form-control" })
+            @Html.ValidationMessageFor(m => m.Email, "", new { @style = "color:red" })
+        </div>
+        <div class="col-md-6 ">
+
+            @Html.LabelFor(m => m.Pets, "Favourite Pet", new { @class = "requiredS" })<br />
+
+            @foreach (var pet in Model.Pets)
+            {
+                <div class="col-md-2 ">
+                    @Html.RadioButtonFor(r => r.PetId, pet.Id, new { @class = "required" })
+                    @pet.Name
+                </div>
+
+            }
+            <div class="col-md-12 ">
+                @Html.ValidationMessageFor(m => m.PetId, "", new { @style = "color:red" })
+            </div>
+
+
+        </div>
+        <div class="col-md-6 ">
+
+            @Html.LabelFor(m => m.Cities, "Favourite City", new { @class = "required" })
+
+
+            @Html.DropDownListFor(model => model.CityId, new SelectList(Model.Cities, "Id", "Name"), "-- Please Select --", new { @class = "required form-control" })
+
+            @Html.ValidationMessageFor(m => m.CityId, "", new { @style = "color:red" })
+        </div>
+        <div class="col-sm-12 form-group">
+            <button type="submit" class="btn btn-primary">SEND</button>
+        </div>
+    </div>
+}

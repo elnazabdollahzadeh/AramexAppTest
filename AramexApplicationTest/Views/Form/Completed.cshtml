@@ -1,0 +1,42 @@
+﻿@model AramexApplicationTest.ViewModels.FormCompletedViewModel
+
+@{
+    ViewBag.Title = "Form Submission Test Page";
+}
+
+<!-- YOU DO NOT NEED TO EDIT THIS FILE -->
+
+<div class="row">
+    <div class="col-sm-12">
+        <h1>Completed Form</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <table class="table table-striped">
+            <tbody>
+                <tr>
+                    <td><strong>First Name</strong></td>
+                    <td>@Model.FirstName</td>
+                </tr>
+                <tr>
+                    <td><strong>Last Name</strong></td>
+                    <td>@Model.LastName</td>
+                </tr>
+                <tr>
+                    <td><strong>Email</strong></td>
+                    <td>@Model.Email</td>
+                </tr>
+                <tr>
+                    <td><strong>Favourite Pet</strong></td>
+                    <td>@Model.Pet.Name</td>
+                </tr>
+                <tr>
+                    <td><strong>Favourite City</strong></td>
+                    <td>@Model.City.Name</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

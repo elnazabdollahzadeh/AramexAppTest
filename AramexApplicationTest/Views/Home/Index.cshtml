@@ -1,0 +1,72 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<h3 class="text-center" id="home-heading">Aramex Pre-Interview Code Test Instructions</h3>
+
+
+<div class="row">
+    <div class="col-xs-12">
+        <h3>1: MVC Framework - Form Submission &amp; Validation</h3>
+        <div class="alert alert-success text-center">
+            <p>@Html.ActionLink("Form Submission & Validation Test", "", "form")</p>
+            <p>
+                <strong>Most of the code for this task has already been written</strong> you simply need to piece the last bits of it together<br />to demonstrate that you understand the fundamentals of the MVC Framework
+            </p>
+        </div>
+        <p>
+            The <strong>FormController.cs</strong> and form view files <strong>Views/Form/Index.cshtml</strong> and <strong>Views/Form/Completed.cshtml</strong> have already been added to the project, you just need to complete the missing sections. Both views have been associated with appropriate view models.
+        </p>
+        <br />
+        <h4>The Form</h4>
+        <p>
+            The <strong>Views/Form/Index.cshtml</strong> has one field added to it as a general guide. You will need to add the rest of the fields to the form (the view model already contains the radio &amp; dropdown data/options) with the end result looking <em>similar</em> to the following:
+        </p>
+    </div>
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+        <img src="~/assets/form-test-1.png" />
+    </div>
+    <div class="col-xs-12">
+        <p><em>N.B. The labels for the fields should also be configured via attributes on the view model so that "FirstName" becomes "First Name" with a space</em></p>
+        <br />
+        <h4>Form Validation</h4>
+        <p>
+            The standard <strong>"~/bundles/jqueryval"</strong> javascript bundle has already been added to the form view. You should ensure that both <strong>client-side</strong> and <strong>server-side</strong> validation are working correctly using attributes on the respective view model.
+            The <strong>"~/bundles/jqueryval"</strong> will be removed from the view during evaluation of your code to ensure that typical MVC Framework server-side model validation is working as expected and that the validation messages (below) still appear.
+        </p>
+        <p>
+            When the SEND button is pressed with no fields completed the validation should look similar to the following screenshot:
+        </p>
+    </div>
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+        <img src="~/assets/form-test-2.png" />
+    </div>
+    <div class="col-xs-12">
+        <br />
+        <h4>Form Submission</h4>
+        <p>
+            You will need to add <strong>one</strong> action to the FormController.cs file. This should handle both valid and invalid form submissions. When the view model state is valid the controller should return the <strong>Views/Form/Completed.cshtml</strong> view.
+        </p>
+        <p>
+            You do <strong>not</strong> need to make any changes to the Completed.cshtml view, on successful submission the view should display as follows provided you have wired up the FormController action correctly.
+        </p>
+    </div>
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+        <img src="~/assets/form-test-3.png" />
+    </div>
+    <div class="col-xs-12">
+        <h3>2: FizzBuzz Test</h3>
+
+        <div class="alert alert-success text-center">
+            <p>@Html.ActionLink("FizzBuzz Test", "", "fizzbuzz")</p>
+            <p>This test is designed to demonstrate that you have an understanding of jQuery and also to provide us with an insight into how your coding style when solving a problem.</p>
+            <p>We appreciate that jQuery is starting to become redundant with the introduction of frameworks such as Angular, however you will need to have jQuery skills to help maintain the existing systems within Aramex while we work towards migrating to newer frameworks.</p>
+            <p>
+                <em>Most of the code required to complete this test has already been included in the <strong>Views/FizzBuzz/Index.cshtml</strong> file - you simply need to finalise the code to complete the requirements.</em>
+            </p>
+        </div>
+
+        @Html.Partial("_FizzBuzzInstructions")
+    </div>
+</div>

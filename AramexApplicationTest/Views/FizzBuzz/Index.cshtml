@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "FizzBuzz Test";
+}
+
+@section scripts{
+    @Scripts.Render("~/bundles/fizzbuzz");
+}
+
+
+<div class="row">
+    <div class="col-sm-12">
+        <h1>FizzBuzz Test</h1>
+
+        @Html.Partial("_FizzBuzzInstructions")
+    </div>
+</div>
+<div id="divFizzbuzz-list" class="row">
+    <p><strong>Output:</strong></p>
+
+</div>
